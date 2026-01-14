@@ -1,313 +1,289 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sagar S. Halli - Cloud DevOps Engineer</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sagar S. Halli | Cloud DevOps Engineer</title>
 
-    <!-- Font Awesome -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
 
-    <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
+<style>
+:root{
+  --primary:#667eea;
+  --accent:#f093fb;
+  --bg:#0a0a0a;
+  --surface:#111827;
+  --text:#ffffff;
+  --muted:#b4b4b4;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{
+  font-family:Inter,system-ui,sans-serif;
+  background:var(--bg);
+  color:var(--text);
+  line-height:1.6;
+}
+.container{max-width:1200px;margin:auto;padding:0 2rem}
+section{padding:5rem 0}
+h1,h2,h3{font-weight:800}
+a{text-decoration:none;color:inherit}
 
-        :root {
-            --primary: #667eea;
-            --secondary: #764ba2;
-            --accent: #f093fb;
-            --bg: #0a0a0a;
-            --surface: #1a1a2e;
-            --text: #ffffff;
-            --text-dim: #b4b4b4;
-        }
+/* NAV */
+nav{
+  position:fixed;top:0;width:100%;
+  background:rgba(10,10,10,.85);
+  backdrop-filter:blur(15px);
+  z-index:1000;
+  border-bottom:1px solid rgba(255,255,255,.1)
+}
+nav .container{
+  display:flex;justify-content:space-between;align-items:center;
+  padding:1.2rem 2rem
+}
+nav ul{display:flex;gap:2rem;list-style:none}
+nav a{color:var(--muted)}
+nav a:hover{color:white}
 
-        body {
-            font-family: Inter, system-ui, sans-serif;
-            background: var(--bg);
-            color: var(--text);
-            line-height: 1.6;
-        }
+/* HERO */
+.hero{
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  text-align:center
+}
+.hero h1{
+  font-size:3.8rem;
+  background:linear-gradient(135deg,var(--primary),var(--accent));
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent
+}
+.hero .role{
+  font-size:1.5rem;
+  color:var(--accent);
+  margin:1rem 0
+}
+.hero p{max-width:800px;margin:auto;color:var(--muted)}
+.social{
+  margin:2rem 0;
+  display:flex;
+  justify-content:center;
+  gap:1.2rem
+}
+.social a{
+  width:48px;height:48px;
+  display:flex;align-items:center;justify-content:center;
+  border-radius:50%;
+  background:rgba(255,255,255,.06)
+}
+.social a:hover{
+  background:linear-gradient(135deg,var(--primary),var(--accent))
+}
 
-        /* NAV */
-        nav {
-            position: fixed;
-            width: 100%;
-            background: rgba(10,10,10,.8);
-            backdrop-filter: blur(15px);
-            padding: 1.2rem 0;
-            z-index: 1000;
-            border-bottom: 1px solid rgba(255,255,255,.1);
-        }
+/* SECTION TITLES */
+.section-title{
+  text-align:center;
+  font-size:2.8rem;
+  background:linear-gradient(135deg,var(--primary),var(--accent));
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent
+}
+.section-sub{color:var(--muted);text-align:center;margin:1rem 0 3rem}
 
-        nav .container {
-            max-width: 1200px;
-            margin: auto;
-            padding: 0 2rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
+/* SKILLS */
+.skills{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:1.5rem
+}
+.skill{
+  background:rgba(255,255,255,.04);
+  padding:1.5rem;
+  border-radius:16px;
+  border:1px solid rgba(255,255,255,.05)
+}
 
-        nav .logo {
-            font-size: 1.6rem;
-            font-weight: 800;
-            background: linear-gradient(135deg,var(--primary),var(--accent));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
+/* TIMELINE */
+.timeline{max-width:900px;margin:auto}
+.item{
+  background:rgba(255,255,255,.04);
+  padding:2rem;
+  border-radius:20px;
+  margin-bottom:2rem;
+  border-left:4px solid var(--primary)
+}
+.item h3{color:var(--primary)}
+.item ul{margin-top:1rem}
+.item li{margin-bottom:.5rem;color:var(--muted)}
 
-        nav ul {
-            display: flex;
-            list-style: none;
-            gap: 2rem;
-        }
+/* PROJECTS */
+.projects{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+  gap:2rem
+}
+.card{
+  background:rgba(255,255,255,.04);
+  border-radius:22px;
+  overflow:hidden;
+  border:1px solid rgba(255,255,255,.05)
+}
+.card .top{
+  height:160px;
+  background:linear-gradient(135deg,var(--primary),var(--accent));
+  display:flex;align-items:center;justify-content:center;
+  font-size:3rem
+}
+.card .body{padding:1.8rem}
+.tech{
+  display:flex;flex-wrap:wrap;gap:.6rem;margin:1rem 0
+}
+.tech i{
+  font-size:1.3rem;
+  padding:.5rem;
+  border-radius:10px;
+  background:rgba(102,126,234,.2)
+}
 
-        nav a {
-            color: var(--text-dim);
-            text-decoration: none;
-            font-weight: 500;
-        }
+/* FOOTER */
+footer{
+  text-align:center;
+  padding:2rem;
+  color:var(--muted);
+  border-top:1px solid rgba(255,255,255,.05)
+}
 
-        nav a:hover { color: var(--text); }
-
-        /* HERO */
-        .hero {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            padding: 2rem;
-        }
-
-        .hero h1 {
-            font-size: 4rem;
-            background: linear-gradient(135deg,var(--primary),var(--accent));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            font-weight: 800;
-        }
-
-        .hero .role {
-            font-size: 1.5rem;
-            color: var(--accent);
-            margin: 1rem 0;
-        }
-
-        .hero .bio {
-            max-width: 720px;
-            margin: auto;
-            color: var(--text-dim);
-        }
-
-        .social-links {
-            display: flex;
-            justify-content: center;
-            gap: 1.2rem;
-            margin: 2rem 0;
-        }
-
-        .social-links a {
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: rgba(255,255,255,.05);
-            color: white;
-            transition: .3s;
-        }
-
-        .social-links a:hover {
-            background: linear-gradient(135deg,var(--primary),var(--secondary));
-            transform: translateY(-5px);
-        }
-
-        .btn {
-            padding: .9rem 2.4rem;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 600;
-            margin: .5rem;
-            display: inline-block;
-        }
-
-        .btn-primary {
-            background: linear-gradient(135deg,var(--primary),var(--secondary));
-            color: white;
-        }
-
-        .btn-secondary {
-            border: 2px solid var(--primary);
-            color: var(--primary);
-        }
-
-        /* SECTION */
-        section { padding: 6rem 0; }
-
-        .container {
-            max-width: 1200px;
-            margin: auto;
-            padding: 0 2rem;
-        }
-
-        .section-title {
-            text-align: center;
-            font-size: 3rem;
-            font-weight: 800;
-            background: linear-gradient(135deg,var(--primary),var(--accent));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .section-subtitle {
-            text-align: center;
-            color: var(--text-dim);
-            margin: 1rem 0 3rem;
-        }
-
-        /* PROJECTS */
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit,minmax(320px,1fr));
-            gap: 2.5rem;
-        }
-
-        .project-card {
-            background: rgba(255,255,255,.03);
-            border-radius: 25px;
-            overflow: hidden;
-            border: 1px solid rgba(255,255,255,.05);
-            transition: .4s;
-        }
-
-        .project-card:hover {
-            transform: translateY(-12px);
-            box-shadow: 0 20px 45px rgba(102,126,234,.3);
-        }
-
-        .project-image {
-            height: 180px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: linear-gradient(135deg,var(--primary),var(--secondary));
-            font-size: 3.5rem;
-            color: white;
-        }
-
-        .project-content { padding: 2rem; }
-
-        /* ICON TECH STACK */
-        .tech-stack-icons {
-            display: flex;
-            gap: 1rem;
-            flex-wrap: wrap;
-            margin-bottom: 1.5rem;
-        }
-
-        .tech-stack-icons i {
-            font-size: 1.6rem;
-            padding: .6rem;
-            border-radius: 12px;
-            background: rgba(102,126,234,.15);
-            color: var(--primary);
-            transition: .3s;
-        }
-
-        .tech-stack-icons i:hover {
-            transform: translateY(-5px) scale(1.15);
-            color: var(--accent);
-            box-shadow: 0 10px 25px rgba(102,126,234,.4);
-        }
-
-        /* FOOTER */
-        footer {
-            text-align: center;
-            padding: 2rem;
-            color: var(--text-dim);
-            border-top: 1px solid rgba(255,255,255,.05);
-        }
-
-        @media (max-width:768px) {
-            .hero h1 { font-size: 2.5rem; }
-        }
-    </style>
+@media(max-width:768px){
+  .hero h1{font-size:2.5rem}
+}
+</style>
 </head>
 
 <body>
 
 <nav>
-    <div class="container">
-        <div class="logo">SH</div>
-        <ul>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-    </div>
+  <div class="container">
+    <strong>SH</strong>
+    <ul>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#projects">Projects</a></li>
+    </ul>
+  </div>
 </nav>
 
-<section class="hero" id="home">
-    <div>
-        <h1>Sagar S. Halli</h1>
-        <div class="role">Cloud DevOps Engineer</div>
-        <p class="bio">
-            AWS | Kubernetes | CI/CD | Terraform | Monitoring  
-            Building scalable, secure cloud systems with production-grade DevOps practices.
-        </p>
+<section class="hero">
+  <div class="container">
+    <h1>Sagar S. Halli</h1>
+    <div class="role">Cloud DevOps Engineer</div>
+    <p>
+      Cloud DevOps Engineer with hands-on AWS and Kubernetes experience deploying production-grade infrastructure using Docker, Terraform, and CI/CD automation. Reduced deployment time by 30% and cloud costs by 25% through Infrastructure as Code and optimization strategies.
+    </p>
 
-        <div class="social-links">
-            <a href="mailto:sagarsh1003@gmail.com"><i class="fas fa-envelope"></i></a>
-            <a href="https://linkedin.com/in/sagar-halli" target="_blank"><i class="fab fa-linkedin"></i></a>
-            <a href="https://github.com/Sagarrrsh" target="_blank"><i class="fab fa-github"></i></a>
-        </div>
-
-        <a href="#projects" class="btn btn-primary">View Projects</a>
-        <a href="#contact" class="btn btn-secondary">Contact</a>
+    <div class="social">
+      <a href="mailto:sagarsh1003@gmail.com"><i class="fas fa-envelope"></i></a>
+      <a href="https://github.com/Sagarrrsh" target="_blank"><i class="fab fa-github"></i></a>
+      <a href="https://linkedin.com/in/sagar-halli" target="_blank"><i class="fab fa-linkedin"></i></a>
     </div>
+  </div>
+</section>
+
+<section id="skills">
+  <div class="container">
+    <h2 class="section-title">Technical Skills</h2>
+    <p class="section-sub">Core DevOps & Cloud technologies</p>
+
+    <div class="skills">
+      <div class="skill">AWS (EC2, EKS, RDS, VPC, Route 53, IAM)</div>
+      <div class="skill">Docker & Kubernetes</div>
+      <div class="skill">Terraform & Ansible</div>
+      <div class="skill">Jenkins, ArgoCD, GitOps</div>
+      <div class="skill">Prometheus, Grafana, CloudFront</div>
+      <div class="skill">Python, C++, Bash</div>
+      <div class="skill">MySQL, Amazon RDS</div>
+      <div class="skill">Linux System Administration</div>
+    </div>
+  </div>
+</section>
+
+<section id="experience">
+  <div class="container">
+    <h2 class="section-title">Experience</h2>
+
+    <div class="timeline">
+      <div class="item">
+        <h3>Cloud DevOps Engineer Intern — Techshala Infotech</h3>
+        <p class="muted">Feb 2025 – May 2025</p>
+        <ul>
+          <li>Deployed containerized applications on AWS EC2 with ALB and Auto Scaling across 3 AZs achieving 99.5% uptime</li>
+          <li>Optimized Docker images by 35% using multi-stage builds</li>
+          <li>Implemented Prometheus & Grafana monitoring reducing incident resolution time by 25%</li>
+        </ul>
+      </div>
+
+      <div class="item">
+        <h3>DevOps Engineering Intern — ComedKares Pvt. Ltd.</h3>
+        <p class="muted">Oct 2023 – Nov 2023</p>
+        <ul>
+          <li>Designed secure two-tier AWS infrastructure with Terraform managing 50+ resources</li>
+          <li>Implemented Multi-AZ RDS, IAM policies, TLS encryption achieving 99.9% availability</li>
+          <li>Reduced cloud costs by 25% using CloudFront, S3 lifecycle policies and Reserved Instances</li>
+        </ul>
+      </div>
+    </div>
+  </div>
 </section>
 
 <section id="projects">
-    <div class="container">
-        <h2 class="section-title">Featured Projects</h2>
-        <p class="section-subtitle">Real-world DevOps & Cloud work</p>
+  <div class="container">
+    <h2 class="section-title">Projects</h2>
 
-        <div class="projects-grid">
+    <div class="projects">
 
-            <div class="project-card">
-                <div class="project-image">
-                    <i class="fas fa-cube"></i>
-                </div>
-                <div class="project-content">
-                    <h3>Scrapzee – Three-Tier App</h3>
-                    <p>
-                        Full-stack application deployed on AWS EKS with CI/CD, monitoring, and autoscaling.
-                    </p>
-
-                    <div class="tech-stack-icons">
-                        <i class="fab fa-docker" title="Docker"></i>
-                        <i class="fas fa-dharmachakra" title="Kubernetes"></i>
-                        <i class="fab fa-aws" title="AWS EKS"></i>
-                        <i class="fab fa-jenkins" title="Jenkins"></i>
-                        <i class="fas fa-code-branch" title="ArgoCD"></i>
-                        <i class="fas fa-flask" title="Flask"></i>
-                        <i class="fab fa-react" title="React"></i>
-                    </div>
-
-                    <a href="https://github.com/Sagarrrsh/scrapzee-app" target="_blank">
-                        View on GitHub →
-                    </a>
-                </div>
-            </div>
-
+      <div class="card">
+        <div class="top"><i class="fas fa-cube"></i></div>
+        <div class="body">
+          <h3>Scrapzee – Three-Tier Web Application</h3>
+          <p>
+            Full-stack scrap management platform deployed on AWS EKS with CI/CD and GitOps.
+          </p>
+          <div class="tech">
+            <i class="fab fa-docker"></i>
+            <i class="fas fa-dharmachakra"></i>
+            <i class="fab fa-aws"></i>
+            <i class="fab fa-jenkins"></i>
+            <i class="fas fa-code-branch"></i>
+            <i class="fab fa-react"></i>
+            <i class="fas fa-database"></i>
+          </div>
+          <a href="https://github.com/Sagarrrsh/scrapzee-app" target="_blank">View on GitHub →</a>
         </div>
+      </div>
+
+      <div class="card">
+        <div class="top"><i class="fas fa-network-wired"></i></div>
+        <div class="body">
+          <h3>Production-Grade AWS Infrastructure</h3>
+          <p>
+            Two-tier AWS infrastructure using Terraform following AWS Well-Architected Framework.
+          </p>
+          <div class="tech">
+            <i class="fas fa-code"></i>
+            <i class="fab fa-aws"></i>
+            <i class="fas fa-server"></i>
+            <i class="fas fa-shield-alt"></i>
+          </div>
+          <a href="https://github.com/Sagarrrsh/Two-Tier-aws-Terraform-Infrastructure" target="_blank">
+            View on GitHub →
+          </a>
+        </div>
+      </div>
+
     </div>
+  </div>
 </section>
 
-<footer id="contact">
-    <p>© 2026 Sagar S. Halli • Cloud & DevOps Engineer</p>
+<footer>
+  © 2026 Sagar S. Halli • Cloud DevOps Engineer
 </footer>
 
 </body>
